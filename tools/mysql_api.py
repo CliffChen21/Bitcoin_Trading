@@ -13,9 +13,9 @@ class Config:
     # database name, if you want just to connect to MySQL server, leave it empty
     DATABASE = "deribit_db"
     # this is the user you create
-    USER = "Cliff"
+    USER = ""
     # user password
-    PASSWORD = "@Cliff_1997_Oct_09"
+    PASSWORD = ""
 
 
 # sqlEngine =create_engine('mysql+pymysql://{}:{}@{}/{}'.format(USER,PASSWORD,HOST,DATABASE))

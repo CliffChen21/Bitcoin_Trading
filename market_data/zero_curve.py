@@ -1,13 +1,4 @@
 from tools.deribit_api import Deribit
-Tokens = {
-  "Deribit": {
-    "Read": {
-      "id": "O9V1XdyF",
-      "secret": "TXsmyJF_aYvw7GKjuKv-HOaZzMLC07bhOUO2m4vCqLE"
-    }
-
-  }
-}
 
 class ZeroCurve:
 
@@ -32,14 +23,11 @@ class ZeroCurve:
         return mkt_price
 
     def cal_market_zc_rate(self):
-
-        mkt_price = self.get_market_price()
-        for price in mkt_price:
-            matu = 
-
+        raise NotImplementedError
 
 
 if __name__ == '__main__':
+    Tokens = {}
     print(ZeroCurve(Tokens).get_market_price())
 
 

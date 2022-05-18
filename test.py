@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 import unittest
 from tools.mysql_api import SQLEngine
-from tools.deribit_api import Deribit
+from exchange_api.deribit_api import Deribit
 from sqlalchemy import Integer, String
 import json
 from tools.database_writer import DataBaseWriter
@@ -48,6 +48,9 @@ class Test(unittest.TestCase):
         time.sleep(5)
         db = SQLEngine()
         db.execute("DROP TABLE IF EXISTS {}".format(table_name))
+
+
+
 
 
 if __name__ == '__main__':
