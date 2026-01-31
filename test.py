@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 import unittest
 from tools.mysql_api import SQLEngine
-from exchange_api.deribit_api import Deribit
+from tools.deribit_api import Deribit
 from sqlalchemy import Integer, String
 import json
 from tools.database_writer import DataBaseWriter
