@@ -15,8 +15,27 @@ This framework provides:
 
 ### 1. Install Dependencies
 
+**Option A: Use the installation script (recommended)**
+
+On Linux/Mac:
 ```bash
-pip install pandas numpy sqlalchemy pymysql aiohttp
+./install.sh
+```
+
+On Windows:
+```bash
+install.bat
+```
+
+**Option B: Manual installation**
+
+```bash
+pip install -r requirements.txt
+```
+
+Or install packages individually:
+```bash
+pip install pandas numpy sqlalchemy pymysql aiohttp requests
 ```
 
 ### 2. Run an Example

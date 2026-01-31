@@ -11,13 +11,22 @@ cd Bitcoin_Trading
 ```
 
 2. **Install dependencies:**
+
+**Easy way - Use the installation script:**
+
+On Linux/Mac:
 ```bash
-pip install pandas numpy
+./install.sh
 ```
 
-Optional (for database and live trading):
+On Windows:
 ```bash
-pip install sqlalchemy pymysql aiohttp requests
+install.bat
+```
+
+**Manual way - Use pip:**
+```bash
+pip install -r requirements.txt
 ```
 
 ## Run Your First Backtest
