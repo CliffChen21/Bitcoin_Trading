@@ -22,10 +22,23 @@ pip install sqlalchemy pymysql aiohttp requests
 
 ## Run Your First Backtest
 
-The easiest way to get started is to run one of the example backtests:
+The easiest way to get started is to run one of the example backtests.
+
+**From the repository root directory:**
 
 ```bash
-python examples/backtest_sma_example.py
+# Make sure you're in the repository root
+cd Bitcoin_Trading
+
+# Run with PYTHONPATH set to current directory
+PYTHONPATH=. python examples/backtest_sma_example.py
+```
+
+**On Windows:**
+
+```bash
+set PYTHONPATH=.
+python examples\backtest_sma_example.py
 ```
 
 You should see output like:

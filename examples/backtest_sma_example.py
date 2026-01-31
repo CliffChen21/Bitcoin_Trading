@@ -7,8 +7,6 @@ This example demonstrates how to:
 3. Run a backtest
 4. Analyze the results
 """
-import sys
-sys.path.insert(0, '/home/runner/work/Bitcoin_Trading/Bitcoin_Trading')
 
 from strategies.simple_moving_average import SimpleMovingAverageStrategy
 from backtesting.backtest_engine import BacktestEngine

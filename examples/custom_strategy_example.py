@@ -4,8 +4,6 @@ Example: Create a Custom Strategy
 This example shows how to create your own custom trading strategy
 by inheriting from the base Strategy class.
 """
-import sys
-sys.path.insert(0, '/home/runner/work/Bitcoin_Trading/Bitcoin_Trading')
 
 from typing import Dict, Optional
 import pandas as pd

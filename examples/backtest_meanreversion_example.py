@@ -3,8 +3,6 @@ Example: Backtest a Mean Reversion Strategy
 
 This example demonstrates how to backtest a mean reversion strategy.
 """
-import sys
-sys.path.insert(0, '/home/runner/work/Bitcoin_Trading/Bitcoin_Trading')
 
 from strategies.mean_reversion import MeanReversionStrategy
 from backtesting.backtest_engine import BacktestEngine

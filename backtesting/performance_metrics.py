@@ -84,22 +84,22 @@ class PerformanceMetrics:
         """
         Calculate win rate from trades.
         
+        Note: This is a simplified implementation. For accurate win rate calculation,
+        you need to track individual trade pairs (entry/exit) and calculate P&L for each.
+        
         Args:
             trades_df: DataFrame with trade information
         
         Returns:
-            Win rate (0-1)
+            Win rate (0-1) or None if cannot be calculated
         """
         if len(trades_df) == 0:
-            return 0.0
+            return None
         
-        # Calculate P&L for each trade pair (buy + sell)
-        # This is simplified - assumes each sell closes a previous buy
-        # In a real implementation, you'd track individual position opens/closes
-        
-        # For simplicity, just return 0.5
-        # TODO: Implement proper P&L tracking per trade
-        return 0.5
+        # This is a placeholder - proper implementation requires tracking
+        # individual position opens/closes and calculating P&L per trade
+        # For now, we don't calculate win rate to avoid misleading metrics
+        return None
     
     @staticmethod
     def calculate_all_metrics(equity_curve: pd.DataFrame, trades_df: pd.DataFrame, 

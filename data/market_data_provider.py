@@ -90,14 +90,34 @@ class MarketDataProvider:
         if not table_name:
             raise ValueError("table_name is required for database source")
         
-        # Build SQL query
+        # Validate table name to prevent SQL injection
+        # Only allow alphanumeric characters and underscores
+        import re
+        if not re.match(r'^[a-zA-Z0-9_]+$', table_name):
+            raise ValueError("Invalid table name. Only alphanumeric characters and underscores allowed.")
+        
+        # Validate limit is an integer if provided
+        if limit is not None:
+            try:
+                limit = int(limit)
+                if limit <= 0:
+                    raise ValueError("Limit must be positive")
+            except (ValueError, TypeError):
+                raise ValueError("Limit must be a positive integer")
+        
+        # Build SQL query with parameterized queries
+        from sqlalchemy import text
+        
         sql = f"SELECT * FROM {table_name}"
+        params = {}
         
         conditions = []
         if start_time:
-            conditions.append(f"id >= '{start_time}'")
+            conditions.append("id >= :start_time")
+            params['start_time'] = start_time
         if end_time:
-            conditions.append(f"id <= '{end_time}'")
+            conditions.append("id <= :end_time")
+            params['end_time'] = end_time
         
         if conditions:
             sql += " WHERE " + " AND ".join(conditions)
@@ -105,10 +125,10 @@ class MarketDataProvider:
         sql += " ORDER BY id"
         
         if limit:
-            sql += f" LIMIT {limit}"
+            sql += f" LIMIT {int(limit)}"
         
         try:
-            result = self.db.execute(sql)
+            result = self.db.execute(text(sql), params) if params else self.db.execute(text(sql))
             df = pd.DataFrame(result.fetchall(), columns=result.keys())
             
             # Rename 'id' column to 'timestamp' if it exists

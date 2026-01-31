@@ -21,16 +21,20 @@ pip install pandas numpy sqlalchemy pymysql aiohttp
 
 ### 2. Run an Example
 
+From the repository root:
+
 ```bash
 # Backtest a Simple Moving Average strategy
-python examples/backtest_sma_example.py
+PYTHONPATH=. python examples/backtest_sma_example.py
 
 # Backtest a Mean Reversion strategy
-python examples/backtest_meanreversion_example.py
+PYTHONPATH=. python examples/backtest_meanreversion_example.py
 
 # Create and test your own custom strategy
-python examples/custom_strategy_example.py
+PYTHONPATH=. python examples/custom_strategy_example.py
 ```
+
+**Note:** Run examples from the repository root directory with `PYTHONPATH=.` to ensure imports work correctly.
 
 ## Creating a Custom Strategy
 
