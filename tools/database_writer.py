@@ -1,4 +1,4 @@
-from exchange_api.deribit_api import Deribit
+from tools.deribit_api import Deribit
 from tools.mysql_api import SQLEngine
 from sqlalchemy import String
 import asyncio
